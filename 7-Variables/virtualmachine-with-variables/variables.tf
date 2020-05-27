@@ -11,7 +11,7 @@ variable "servername" {
 variable "location" {
     type = string
     description = "Azure location of terraform server environment"
-    default = "westus2"
+    default = "westus2" //allows to make variables optional. Powerful for customizing tf configs and modules
 
 }
 
@@ -26,13 +26,15 @@ variable "admin_password" {
 }
 
 variable "vnet_address_space" { 
-    type = list
+    type = list //list of strings, enclosed in []
     description = "Address space for Virtual Network"
     default = ["10.0.0.0/16"]
 }
 
 variable "managed_disk_type" { 
-    type = map
+    type = map 
+//key value pair mapping. We have our string westus2 and another value.
+// allows us to perform a particular logic
     description = "Disk type Premium in Primary location Standard in DR location"
 
     default = {

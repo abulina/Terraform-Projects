@@ -4,6 +4,6 @@ provider "azurerm" {
 
 #create resource group
 resource "azurerm_resource_group" "rg" {
-    name     = "rg-testcondition"
+    name     = "rg-testcondition" //use case for this function lower("TFStoragesta")
     location = var.location != "" ? var.location : "southcentralus"
 }

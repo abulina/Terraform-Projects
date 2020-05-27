@@ -4,7 +4,7 @@ provider "azurerm" {
 
 #create resource group
 resource "azurerm_resource_group" "rg" {
-    name     = "rg-${var.system}"
+    name     = "rg-${var.system}" //recommended way to express variables within tf code
     location = var.location
     tags      = {
       Environment = var.system
